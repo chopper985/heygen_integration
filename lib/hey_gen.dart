@@ -52,8 +52,8 @@ class HeyGenAPI {
     required TaskType type,
     TaskMode mode = TaskMode.sync,
   }) async {
-    final bool status = await HeygenRepository()
-        .speakWithHeyGen(sessionId, text, type.type, mode.mode);
+    final bool status =
+        await HeygenRepository().speakWithHeyGen(sessionId, text, mode, type);
 
     return status;
   }

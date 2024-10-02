@@ -107,16 +107,16 @@ class HeygenRepository extends HeygenRepositoryInterface {
   Future<bool> speakWithHeyGen(
     String sessionId,
     String text,
-    String taskMode,
-    String taskType,
+    TaskMode taskMode,
+    TaskType taskType,
   ) async {
     final Response response = await _dio.post(
       Endpoints.sendTask,
       data: {
         "session_id": sessionId,
         "text": text,
-        "task_mode": taskMode,
-        "task_type": taskType,
+        "task_mode": taskMode.mode,
+        "task_type": taskType.type,
       },
       options: options,
     );

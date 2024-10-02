@@ -11,8 +11,8 @@ abstract class HeygenRepositoryInterface {
   Future<bool> speakWithHeyGen(
     String sessionId,
     String text,
-    String taskMode,
-    String taskType,
+    TaskMode taskMode,
+    TaskType taskType,
   );
   Future<bool> stopSessionHeyGen(String sessionId);
 }
