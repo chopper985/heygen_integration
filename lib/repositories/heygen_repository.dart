@@ -39,7 +39,7 @@ class HeygenRepository extends HeygenRepositoryInterface {
     );
 
     if (response.statusCode == 200) {
-      return NewSessionResponseModel.fromJson(response.data);
+      return NewSessionResponseModel.fromMap(response.data);
     }
 
     return null;
